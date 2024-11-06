@@ -19,6 +19,7 @@ void openFile();
 int flagValidation(string);
 void readFile();
 void buildBar(int);
+void closeFile();
 
 ifstream fileStreamObject;
 
@@ -35,6 +36,7 @@ int main()
         buildBar(population);
         cout << endl;
     }
+    closeFile();
     return 0;
 }
 
@@ -108,4 +110,10 @@ void buildBar(int input) {
     string output;
     for (int count = 0; count < input; count += 1000)
         cout << "*";
+}
+
+void closeFile() {
+    cout << "Closing file ...";
+    fileStreamObject.close();
+    cout << "File closed.";
 }
